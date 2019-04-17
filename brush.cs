@@ -53,7 +53,7 @@ public class PlayerBrush : NetworkBehaviour
                 int centerX = (int)Mathf.Round(pixelUVX * tex.width);
                 int centerY = (int)Mathf.Round(pixelUVY * tex.height);
 
-                int radius = sqrt(centerX** + centerY**) ;
+                int radius = sqrt(centerX** + centerY**) ; //Please check if coordinate transformation is correct or not
                 for (int j = 0; j <= radius; j++)
                 {
 
