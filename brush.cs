@@ -53,7 +53,7 @@ public class PlayerBrush : NetworkBehaviour
                 int centerX = (int)Mathf.Round(pixelUVX * tex.width);
                 int centerY = (int)Mathf.Round(pixelUVY * tex.height);
 
-                int radius = sqrt(centerX** + centerY**) ; //Please check if coordinate transformation is correct or not
+                int radius = 12 ; //Try changing this value. Looks weird that it's fixed up to this value.
                 for (int j = 0; j <= radius; j++)
                 {
 
@@ -61,8 +61,8 @@ public class PlayerBrush : NetworkBehaviour
                     {
 
                         double angle = i * System.Math.PI / 180;
-                        int x = (int)(j * System.Math.Cos(angle));
-                        int y = (int)( j * System.Math.Sin(angle));
+                        int x = (int)(centerX + j * System.Math.Cos(angle));
+                        int y = (int)(centerY +  j * System.Math.Sin(angle));
 
                         tex.SetPixel(x, y, ColorPicker.SelectedColor);
                     }
